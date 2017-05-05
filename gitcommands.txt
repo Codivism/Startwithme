@@ -1,0 +1,7 @@
+1. git init -> to initialize the git repository
+
+2. git status -> to know the git status anytime
+
+3. git add filename(with path) -> to add
+
+4. 
