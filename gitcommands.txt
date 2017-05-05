@@ -2,6 +2,64 @@
 
 2. git status -> to know the git status anytime
 
-3. git add filename(with path) -> to add
+3. git add filename(with path) -> to add or stage a new file
 
-4. 
+4. git commit ->press I for insert to enter text editor-> type->initial commit
+       
+                   press escape ESC -> then :wq + enter and the file is overwritten
+
+5. git log -> to see the author and other details of the commit
+
+6. git add *html -> to add all html files
+
+7. touch .gitignore -> a file containing the names of the files to be ignored is created
+              
+               ( use command line to create it since windows will not allow
+                     a file to be created without a name)
+
+   Then add the files like --> *.log
+8. git branch myBranch ->to create a new branch
+
+9. git checkout myBranch -> to switch to the branch myBranch
+
+10. git commit -m 'new updates'  -> shortcut to commit new updates
+
+11. git checkout master -> to go back to master branch
+
+12. git merge myBranch -> to merge myBranch to the main branch
+
+13. git commit -a -m 'newfile' ->shortcut to merge updated files(must be staged before)
+
+14. git mergetool  -> merge tool that will help fix any conflict between two files
+
+15. git stash       -> to save changes on a branch without commiting and leave it to work on later
+
+16. git stash apply -> when you have come back and want to work on the unfinished work on the branch saved in stash
+
+
+                      **********   Remote **********
+
+17. git remote  -> to see if we have anything on our remote repository
+
+18. git clone https://github.com/somerepository.git
+
+    cd somerepository
+
+    git remote -> it will show origin-> alias for the repository cloned( we can use 'origin' instead of the full repo URL)
+
+    git remote -v 
+
+19. git fetch origin -> will fetch any changes done on the repo since cloned ; it will not merge with your branch
+
+20. git pull origin -> will merge as well
+
+21. git push origin master-> will push any changes done to the repo since cloned
+                            Don't do it for the public ones
+                               credentials will be asked :P
+
+
+22. git remote add myRemoterepo https://github.com/startwithme.git
+
+    git remote 
+
+    git remote -v   -> to get the urls for fetch and push
