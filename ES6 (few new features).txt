@@ -1,0 +1,173 @@
+/** literals-- let,var,const
+
+let notebook = {
+    movie : 'The Notebook',
+    movieTitle : function(){
+       return 'This is the movie title';
+    }
+};
+
+console.log ( notebook.movie );
+console.log ( notebook.movieTitle()); 
+
+
+
+==================
+
+
+
+
+
+/* Arrow Functions
+
+function circleArea(r) {
+    var PI = 3.14;
+    return PI* r * r;
+} 
+
+let circleArea = (r) => {
+    const PI = 3.14;
+    return PI* r * r;
+} ;
+
+let circleArea = r =>  3.14 * r * r;
+
+console.log(circleArea(4)); 
+
+
+
+
+===================
+
+
+
+/* template Literals */
+
+let name = 'Joydeep';
+
+console.log('The only wonderful man next to my father is ' + name);
+
+console.log(`My name is ${name} banerjee`);
+
+console.log(`the sum of 3 + 4 is ${3 + 4}`);
+
+
+
+
+====================
+
+
+/* Spread Operator */
+
+let sum = (a,b,c) => {
+    console.log(a + b + c);
+};
+
+var nums = [3,4,5];
+
+sum(nums[0],nums[1],nums[2]);
+
+sum(...nums);
+
+var meats = ['chicken', 'mutton'];
+var foods = ['apples',...meats, 'mangoes'];
+
+console.log(foods);
+
+
+
+
+=====================
+
+
+
+
+
+
+/* Javascript Classes and Inheritance */
+
+
+
+class Person {
+
+    constructor(name, age, weight) {
+        this.name = name;
+        this.age = age;
+        this.weight = weight;
+    }
+
+    displayWeight() {
+        console.log(this.weight);
+    }
+
+    displayName() {
+        console.log(this.name);
+    }
+}
+
+class programmer extends Person{
+    constructor(name,age,weight, language){
+        super(name, age, weight);
+        this.language = language;
+    }
+    displaylanguage() {
+        console.log(this.language);
+    }
+}
+
+let Joydeep = new programmer('Joydeep', 27, 78,'Javascript');
+let Pushpita = new Person('Pushpita',26,60);
+
+Joydeep.displayWeight();
+Joydeep.displayName();
+Pushpita.displayWeight();
+
+Joydeep.displaylanguage();
+
+
+
+
+
+
+=======================
+
+/* Generators -*/
+function* sampleGenerator(){
+    yield 'apples';
+    yield 'chicken';
+    if(1){
+        console.log('One');
+    }
+    yield 'corn';
+}
+
+let sample = sampleGenerator();
+console.log(sample.next());
+console.log(sample.next());
+console.log(sample.next());
+console.log(sample.next());
+
+/* result---
+ { value: 'apples', done: false }
+ { value: 'chicken', done: false }
+ One
+ { value: 'corn', done: false }
+ { value: undefined, done: true }
+ */
+
+
+
+function* getNextid(){
+    let id = 0;
+    while(id<3){
+        yield id++;
+    }
+}
+
+let createUser = getNextid();
+
+console.log(createUser.next().value);
+console.log(createUser.next().value);
+
+console.log('I am waiting');
+console.log(createUser.next().value);
